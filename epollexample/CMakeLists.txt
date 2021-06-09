@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 2.8)
+project(epollstudy)
+
+set(CMAKE_CXX_STANDARD 11)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
+aux_source_directory(. DIR_SRCS)
+
+find_package(Threads)
+
+add_executable(epollstudy ${DIR_SRCS} Source.cpp)
+
+target_link_libraries(epollstudy ${CMAKE_THREAD_LIBS_INIT})
